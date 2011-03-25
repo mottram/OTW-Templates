@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb" xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<meta charset="utf-8" />
+<style>
+@import url("http://jackmottram.com/otw/style.css");
+h4 {
+	font-size:18px!important;
+}
+ul {
+	list-style-type:none;
+}
+
+#updates {
+	font-size:0.875em;
+}
+
+#updates li {
+	margin-bottom:0.5em;
+}
+</style>
+<title>One Thing Well - My Linux Setup</title>
+<link rel="icon" href="http://29.media.tumblr.com/avatar_49fa8582f513_16.png"/>
+<link rel="alternate" type="application/rss+xml" title="rss" href="http://onethingwell.org/rss"/>
+<meta name="viewport" content="width=610"/>
+<meta name="description" content="a weblog about simple, useful software (on any platform)." />
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body onload="prettyprint()">
+<!--[if IE]><noscript><div><p>are you using internet explorer with javascript turned off?</p><p>this site probably looks a bit of a mess.</p><p>if you can, turn javascript on, and reload the page - that should fix the problem.</p><p>if you can't do that, my apologies. for fun, I made the site using new code that explorer doesn't understand just yet.</p>/div></noscript><![endif]--> 
+<div>
+
+<header>
+<h1><a href="/">One Thing Well</a></h1> 
+<p>is a weblog <a href="/about/">about</a> simple, useful software (on any platform).<br />Follow along on <a href="http://twitter.com/onethingwell">Twitter</a> or via <a href="http://onethingwell.org/rss">the feed</a>. Suggestions? <a href="/contact/">Get in touch</a>.</p> 
+</header>
+
+<article>
+
+<h2>My Linux Setup</h2>
+<p>This is the software I use on my Eee PC 701, which has a 900Hhz Intel Celeron M processor underclocked to 630Mhz, 500MB of RAM and a 4GB internal SSD, plus a <a title="This is an Amazon affiliate link, so I'll earn a couple of quid if you by the card" href="http://www.amazon.com/gp/product/B00305GHAE?ie=UTF8&amp;tag=submirespo-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00305GHAE">16GB SDHC card</a><img src="http://www.assoc-amazon.com/e/ir?t=submirespo-20&amp;l=as2&amp;o=1&amp;a=B00305GHAE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> that lives permanently in its card reader.</p>
+
+<img style="padding:1.5em" src="http://farm3.static.flickr.com/2318/2190286994_b00231a82f.jpg" alt="my eee pc 701" width="500" height="333" title="an old snap from 2008, in case you were wondering why the stuff onscreen doesn't match up with the list below!" />
+
+<h4>Distribution</h4>
+<ul>
+<li><a href="http://www.ubuntu.com/">Ubuntu</a></li>
+</ul>
+<p>I install from the <a href="https://help.ubuntu.com/community/installation/minimalcd">Minimal CD</a>, and say 'no' to everything it offers to install beyond the basics, then install <code>xorg</code> and everything listed below with <code>apt-get</code><sup id="r1-062610"><a href="#f1-062610">1</a></sup>.</p><p>The last time I did this was with an Ubuntu 9.0.4 CD, and have <code>do-release-upgrade</code>'d from there to 10.10 Alpha 1 without a hitch; a cron job runs <code>apt-get update &amp;&amp; apt-get -y dist-upgrade</code> every night to keep me up to date.</p>
+<p><small><abbr>NB</abbr>: the Eee PC is perfectly capable of running a full-blown Ubuntu installation, even with all the Compiz eye-candy turned up to 11; I just don't need a <abbr title="Desktop Environment">DE</abbr></small>.</p>
+
+<h4>The Basics</h4>
+<ul>
+<li><em><a href="http://dwm.suckless.org/">dwm</a></em>, for managing windows.</li>
+<li><em><a href="http://tools.suckless.org/dmenu/">dmenu</a></em>, for launching applications</li>
+<li><a href="http://software.schmorp.de/pkg/rxvt-unicode.html">urxvt</a>, which I run in client/server mode.</li>
+<li><a href="http://www.zsh.org/">zsh</a>, mostly for its tab completion and typo correction.</li>
+<li><em><a href="http://www.brain-dump.org/projects/dvtm/">dvtm</a></em>, for tiling 'windows' at the console</li>
+<li><a href="http://tmux.sourceforge.net/">tmux</a>, for detachable sessions (I find it much easier to use than screen).</li>
+<li><a href="http://dtach.sourceforge.net/">dtach</a>, for detaching single processes.</li>
+<li><a href="http://wicd.sourceforge.net/download.php">wicd</a> and wicd-curses for wifi networking.</li>
+<li>coreutils, for managing files, moving around, <span class="amp">&amp;</span>c..</li>
+<li><em><a href="http://wiki.github.com/joelthelion/autojump/">autojump</a></em>, for super-fast `cd`ing.</em></li>
+<li>locate, for finding things.</li>
+<li>sshfs, for mounting remote directories </li>
+<li><a href="http://dev.yorhel.nl/ncdu">ncdu</a>, for hunting down big files.</li>
+<li><a href="http://htop.sourceforge.net/">htop</a>, for viewing processes.</li>
+<li><a href="http://linux.die.net/man/1/pgrep">pgrep</a> and pkill, for managing processes by name</li>
+<li><a href="http://samba.anu.edu.au/rsync/">rsync</a>, for backups and uploading local versions of my websites to servers.</li>
+<li><a href="http://www.gnu.org/software/tar/">tar</a>, zip, unzip and unrar for making/extracting archives.</li>
+<li><a href="http://pcmanfm.sourceforge.net/">PCManFM</a>, for managing files when i'm not at the console.</li>
+<li><em><a href="http://tools.suckless.org/tabbed">tabbed</a></em>, to provide tabs for sandy, surf and urxvt.</li>
+<li><em><a href="http://git-scm.com/">git</a></em>, for keeping <a href="http://github.com/mottram/">my stuff</a> under version control.</li>
+<li><a href="http://mercurial.selenic.com/">mercurial</a>, mostly for getting up-to-date versions of, and applying my patches to, software.</li>
+<li>pm-utils, for suspending, power management.</li>
+<li><em><a href="http://tools.suckless.org/slock">slock</a></em>, for locking the screen.</li>
+<li><a href="http://db.tt/hIuZZ2Y">Dropbox</a>, for synching files with my Mac, controlled with <a href="http://wiki.dropbox.com/tipsandtricks/textbasedlinuxinstall">dropbox.py</a>.</li>
+<li><a href="http://www.levien.com/type/myfonts/inconsolata.html">Inconsolata</a> and msttcorefonts, to make my terminal and the web look pretty, respectively.</li>
+<li><a href="https://help.ubuntu.com/community/restrictedformats">ubuntu-restricted-extras</a>, for LAME, gstreamer, Flash, <span class="amp">&amp;</span>c..
+<li><a href="http://conky.sourceforge.net/">Conky</a>, for <del>useful statistics</del> <ins>pretty graphs and bars</ins>.</li>
+</ul>
+
+
+<a title="My desktop" href="http://dl.dropbox.com/u/84981/eee-screenshot.png"><img style="padding:0.5em;" src="http://dl.dropbox.com/u/84981/eee-screenshot.png" alt="my desktop" width="250" /></a>
+<a title="A tmux session" href="http://dl.dropbox.com/u/84981/tmux.png"><img style="padding:0.5em;float:right;" src="http://dl.dropbox.com/u/84981/tmux.png" alt="A tmux session" width="250" /></a>
+
+<h4>Text</h4>
+<ul>
+<li><a href="http://www.vim.org/">vim</a>, for writing and&#8212;especially&#8212;editing text.</li>
+<li>nano, for quick edits.</li>
+<li><em><a href="http://sandyeditor.sf.net/">Sandy</a></em>, for writing text when i'm not in a vim mood.</li>
+<li><a href="http://code.google.com/p/apvlv/">apvlv</a>, for reading pdfs.</li>
+<li><a href="http://poppler.freedesktop.org/">poppler-utils</a>, for converting pdfs to text.</li>
+<li><a href="http://www.winfield.demon.nl/">antiword</a>, for converting word docs to text.</li>
+<li><a href="http://www.greenwoodsoftware.com/less/">less</a>, for reading text files.</li>
+<li><a href="http://daringfireball.net/projects/markdown/">Markdown</a>, for turning legible text into html.</li>
+</ul>
+<h4>Electronic Mail <span class="amp">&amp;</span> IRC</h4>
+<ul>
+<li><a href="http://www.mutt.org/">mutt</a>, for reading/moving/saving/deleting email.</li>
+<li><a href="http://www.vim.org/">vim</a> (again), for writing email.</li>
+<li><a href="http://msmtp.sourceforge.net/">msmtp</a>, for sending email.</li>
+<li><em><a href="http://wiki.github.com/jgoerzen/offlineimap/">offlineimap</a></em>, for synchronising local email with gmail .</li>
+<li><a href="http://www.rpcurnow.force9.co.uk/mairix/">mairix</a>, for searching local email.</li>
+<li><em><a href="http://code.google.com/p/goobook/">goobook</a></em>, for Gmail contacts integration.</li>
+<li><em><a href="http://tools.suckless.org/ii/">ii</a></em> with the <a href="http://tools.suckless.org/ii/patches/autojoin">autojoin</a> patch, for IRC (used rarely)</li>
+<li><em><a href="http://bitbucket.org/emg/srw">srw</a></em> and <em><a href="http://bitbucket.org/emg/pcw">pcw</a></em>, to make ii easier to use.</li>
+</ul>
+<h4>The Web</h4>
+<ul>
+<li><em><a href="http://surf.suckless.org/">surf</a></em>, for browsing the web (lightly modified to include features like <a href="http://surf.suckless.org/files/simple_bookmarking_redux">bookmarks</a> and <a href="http://surf.suckless.org/files/link_hints">link hinting</a>).</li>
+<li><a href="http://w3m.sourceforge.net/">w3m</a>, for browsing the web and reading html local documents.</li>
+<li><em><a href="http://newsbeuter.org">newsbeuter</a></em>, for reading feeds (it's slow to synchronise with Google Reader, but the 'save item as text' feature makes up for it).</li>
+<li><a href="http://wiki.github.com/mojombo/jekyll/">jekyll</a> and <a href="">jekyll_ext</a>, to power my personal weblog.</li>
+</ul>
+<h4>Downloading</h4>
+<ul>
+<li><em><a href="http://code.google.com/p/cclive/">cclive</a></em>, for downloading videos.</li>
+<li><a href="http://www.transmissionbt.com/">transmission-cli</a>, for downloading torrents (I prefer <a href="http://libtorrent.rakshasa.no/">rtorrent</a>, but it doesn't do UPnP).</li>
+<li><a href="http://axel.alioth.debian.org/">axel</a>, for downloading everything else.</li>
+</ul>
+<h4>Sound <span class="amp">&amp;</span> Vision</h4>
+<ul>
+<li><a href="https://derf.homelinux.org/projects/feh/">feh</a>, for looking at photographs and setting a background image.</li>
+<li><a href="http://freshmeat.net/projects/scrot/">scrot</a>, for screenshots.</li>
+<li><a href="http://www.imagemagick.org/">imagemagick</a>, for manipulating images.</li>
+<li><a href="http://www.mplayerhq.hu/design7/news.html">mplayer</a>, to play videos (and music, sometimes).</li>
+<li>cplay, to play music and podcasts.</li>
+</ul>
+<h4>Copying <span class="amp">&amp;</span> Pasting <sup id="r2-062610"><a href="#f2-062610">2</a></sup></h4>
+<ul>
+<li><a href="http://www.x.org/archive/x11r6.8.1/doc/xcutsel.1.html">xcutsel</a>, to keep the cut buffer and primary selection in sync.</li>
+<li><a href="http://freshmeat.net/projects/xclip/">xclip</a>, a cli interface to the x selection (useful for pasting into vim).</li>
+<li><a href="http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin">Clipman</a>, to store a clipboard history.</li>
+<li>xfce-clipman-popup, to select items from that clipboard history.</li>
+</ul>
+<h4>Software that doesn't seem to exist</h4>
+<ul>
+<li><del>An equivalent to <a href="http://www.smileonmymac.com/textexpander/">Textexpander</a>.</del> <ins>Readers John and Ronan suggested <a href="http://code.google.com/p/autokey/">AutoKey</a>, which looks good.</ins></li>
+<li>A lightweight image editor, <em>&#224; la</em> <a href="http://flyingmeat.com/acorn/">Acorn</a>.</li>
+</ul>
+<p>
+<hr />
+<ol class="footnotes">
+<li id="f1-062610">
+<p>Except the software in italics, which I build myself. This can be tiresome, but in some cases I have to configure an application by editing its source code, and in others the version in the Ubuntu repos is packaged in a way I don't like (and sometimes I just like having the very latest version). <a href="#r1-062610">&#8617;</a></p>
+</li>
+<li id="f2-062610">
+<p>I'm aware that this section is <em>completely ridiculous</em>; if there's a more sensible way to to copy and paste to and from every application, with history, do <a href="mailto:jack@onethingwell.org">let me know</a>. <a href="#r2-062610">&#8617;</a></p>
+</li>
+</ol>
+
+<hr />
+<h5>Updates</h5>
+<ul id="updates">
+<li>01/07/10: added IRC setup.</li>
+<li>04/07/10: added goobook.
+<li>07/07/10: added autojump</li>
+</ul>
+
+</article>
+<footer>
+<p>Powered by <a href="http://tumblr.com">Tumblr</a>, design by <a href="http://sur.ly">Sur.ly</a></p>
+</footer>
+</div>
+<script type="text/javascript" src="http://onethingwell.googlecode.com/hg/p.js"></script>
+<!-- google analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setaccount', 'ua-122435-6']);
+  _gaq.push(['_trackpageview']);
+
+  (function() {
+    var ga = document.createelement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getelementsbytagname('head')[0] || document.getelementsbytagname('body')[0]).appendchild(ga);
+  })();
+
+</script>
+</body>
+</script>
+<!-- begin tumblr code --><iframe src="http://www.tumblr.com/dashboard/iframe?src=http%3a%2f%2fonethingwell.org%2f" scrolling="no" width="324" height="25" frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px; background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe><!--[if ie]><script type="text/javascript">document.getelementbyid('tumblr_controls').allowtransparency=true;</script><![endif]--><script type="text/javascript">_qoptions={qacct:"p-19utqe8ngozbm"};</script><script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script><noscript><img src="http://pixel.quantserve.com/pixel/p-19utqe8ngozbm.gif" style="display:none; border-width:0px; height:1px; width:1px;" alt=""/></noscript><!-- end tumblr code -->
+</html>
