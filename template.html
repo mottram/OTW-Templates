@@ -1,18 +1,19 @@
 <!DOCTYPE html> 
 <html dir="ltr" lang="en-GB" xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
-<link rel="stylesheet" href="http://jackmottram.com/otw/style.css" type="text/css" media="screen, projection" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://c.1tw.org/style.css" />
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="readability-verification" content="nXFN82JesGKkvnEfPbzhEQ9mJvDcEC76tXD3xTG7">
-<style>
-{CustomCSS}
-</style>
+<meta name="bitly-verification" content="53ffc76143bd"/>
+<meta name="google-site-verification" content="6qVwXFadpbTAy4MwLmq68u0B5x6nPkFmgR2nt60s_EI" />
 <title>{Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}</title>
 <link rel="icon" href="{Favicon}"/>
-<link rel="apple-touch-icon" href="http://jackmottram.com/otw/apple-touch-icon.png"/>
+<link rel="apple-touch-icon" href="http://c.1tw.org/apple-touch-icon.png"/>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+{block:PermalinkPage}<link rel="canonical" href="{Permalink}" />{/block:PermalinkPage}
 <meta name="viewport" content="width=device-width"/>
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -20,14 +21,48 @@
 <link rel="openid.delegate" href="http://mottram.myopenid.com/" /> 
 <link rel="openid2.local_id" href="http://mottram.myopenid.com" /> 
 <link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<link rel="publisher" href="https://plus.google.com/b/106028094766765698035/" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-122435-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+{block:PermalinkPage}{block:Posts}{block:Link}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{PlaintextName}"/>
+<meta name="twitter:description" content="{PlaintextDescription}"/>{/block:Link}{block:Photo}
+{block:Caption}<meta name="twitter:description" content="{PlaintextCaption}"/>{/block:Caption}{/block:Photo}{block:Text}
+<meta name="twitter:card" content="summary">
+{block:Title}<meta name="twitter:title" content="{PlaintextTitle}"/>{/block:Title}
+<meta name="twitter:description" content="{PlaintextBody}"/>{/block:Text}{/block:Posts}{/block:PermalinkPage}
 </head>
-<body onload="prettyPrint()"{block:SearchPage} id="search"{/block:SearchPage}>
+<body onload="prettyPrint()"{block:SearchPage} id="search"{/block:SearchPage} itemscope itemtype='http://schema.org/Blog'>
 <!--[if IE]><noscript><div><p>Are you using Internet Explorer with JavaScript turned off?</p><p>This site probably looks a bit of a mess.</p><p>If you can, turn JavaScript on, and reload the page - that should fix the problem.</p><p>If you can't do that, my apologies. For fun, I made the site using new code that Explorer doesn't understand just yet.</p>/div></noscript><![endif]--> 
-<div>
+
+
+<div class="content">
+
 <header>
-<h1><a href="/">{Title}</a></h1>
-<p>is a weblog <a href="/about/">about</a> simple, useful software (on any platform). <br />Follow along on <a href="http://twitter.com/onethingwell">Twitter</a> or via <a href="http://onethingwell.org/rss">the feed</a>. <a href="/contact/">Get in touch</a>. <a href="/sponsorship">Sponsorship</a>.</p>
+<div class="left">
+<a href="/">
+<h1>One Thing Well</h1>
+</a>
+<h2>A weblog <a href="/about">about</a> simple, useful software.</h2>
+<p>You can follow along on <a href="http://twitter.com/onethingwell">Twitter</a> or via <a href="http://onethingwell.org/rss">the feed</a>. Don't hesitate to <a href="/contact/">get in touch</a>. <a href="/sponsorship">Sponsor</a> the site.</p>
+</div>
+
+<div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/12121/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
+
 </header>
+
 {block:SearchPage}
 <p>Your search for <i>{SearchQuery}</i> returned {SearchResultCount} result(s):</p>
 <form action="/search" method="get"><label for="q">Search again: </label><input type="text" name="q" id="q" value="{SearchQuery}"/></form>
@@ -38,17 +73,19 @@
 <form action="/search" method="get"><label for="q">Search: <input type="text" name="q" id="q" value="{SearchQuery}"/></form></p>
 {/block:TagPage}
 {block:Posts}
-<article class="{block:Regular}regular{/block:Regular}{block:Photo}photo{/block:Photo}{block:Quote}quote{/block:Quote}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}{block:Link}link{/block:Link}{block:More} more{/block:More}{block:RebloggedFrom} reblogged{/block:RebloggedFrom}">
+<article itemprop='blogPosts' itemscope itemtype='http://schema.org/BlogPosting' class="{block:Regular}regular{/block:Regular}{block:Photo}photo{/block:Photo}{block:Quote}quote{/block:Quote}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}{block:Link}link{/block:Link}{block:More} more{/block:More}{block:RebloggedFrom} reblogged{/block:RebloggedFrom}">
 {block:Regular}
-{block:Title}<h2>{Title}</h2>{/block:Title}
-{Body}
+{block:Title}<h2 itemprop="name">{Title}</h2>{/block:Title}
+<div itemprop='description'>{Body}</div>
 {block:More}
 <p><a href="{Permalink}">Continue reading &#8216;{block:Title}{Title}{/block:Title}&#8217;&#8230;</a></p>
 {/block:More}
 {/block:Regular}
 {block:Photo}
+<div itemprop='description'>
 {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" title="{PhotoAlt}">{LinkCloseTag}
 {Caption}
+</div>
 {/block:Photo}
 {block:Quote}
 <blockquote>
@@ -56,24 +93,24 @@
 {Quote}
 </p>
 </blockquote>
-{block:Source}{Source}{/block:Source}
+{block:Source}<p>{Source}</p>{/block:Source}
 {/block:Quote}
 {block:Video}
 {Video-500}
-<p>{Caption}</p>
+<div itemprop='description'><p>{Caption}</p></div>
 {/block:Video}
 {block:Audio}
 {AudioPlayerGrey}
 <p>{Caption}</p>
 {/block:Audio}
 {block:Link}
-<h2><a href="{URL}" {Target}>{Name}</a></h2>
-{block:Description}{Description}{/block:Description}
+<h2 itemprop="name"><a href="{URL}" {Target}>{Name}</a></h2>
+<div itemprop='description'>{block:Description}{Description}{/block:Description}</div>
 {/block:Link}
 
 {block:Chat}
 {block:Title}
-<h2>{Title}</h2>
+<h2 itemprop="name">{Title}</h2>
 {/block:Title}
 <ul class="chat">
 {block:Lines}
@@ -89,7 +126,7 @@
 {/block:Chat}
 
 <footer>
-<p><a href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}, {block:Date}{12Hour}:{Minutes}{AmPm}</a>{/block:Date}&#160;&#183;&#160;{block:HasTags}{block:Tags}<a href="{TagURL}">{Tag}</a>&#160;{/block:Tags}{/block:HasTags}&#183;&#160;<a href="{Permalink}">{NoteCountWithLabel}</a>
+<p><a itemprop='url' href="{Permalink}">{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}, {block:Date}{12Hour}:{Minutes}{AmPm}</a>{/block:Date}&#160;&#183;&#160;{block:HasTags}{block:Tags}<a href="{TagURL}">{Tag}</a>&#160;{/block:Tags}{/block:HasTags}&#183;&#160;<a href="{Permalink}">{NoteCountWithLabel}</a>
 {block:RebloggedFrom}<br />Reblogged from <a href="{ReblogParentURL}">{ReblogRootName}</a>{/block:RebloggedFrom}</p>
 </footer>
 </article>
@@ -133,20 +170,23 @@
 <footer class="smallprint">
 <p>Powered by <a href="http://tumblr.com">Tumblr</a> | Design by <a href="http://sur.ly">Sur.ly</a> | <a href="/privacy-policy">Privacy Policy</a></p>
 </footer>
-<script type="text/javascript" src="http://onethingwell.googlecode.com/hg/p.js"></script>
-<!-- Google Analytics -->
+<script type="text/javascript"
+src="//cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-122435-6']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-  })();
-
+$("a").on('click',function(e){
+    var url = $(this).attr("href");
+    if (e.currentTarget.host != window.location.host) {
+        _gaq.push(['_trackEvent', 'Outbound Links', e.currentTarget.host, url, 0]);
+        if (e.metaKey || e.ctrlKey) {
+             var newtab = true;
+        }
+        if (!newtab) {
+             e.preventDefault();
+             setTimeout('document.location = "' + url + '"', 100);
+        }
+    }
+});
 </script>
 </body>
 </html>
