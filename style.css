@@ -1,0 +1,732 @@
+/*------------------------------------------------
+One Thing Well Stylesheet
+Version:	0.3
+License:	MIT / Copyright (c) Jack Mottram 2010
+Contact:	j@ck.mottr.am
+Download:	http://goo.gl/GbgE
+Note: 		This is all a bit messy just now!
+/*----------------------------------------------*/
+
+/* html5doctor.com Reset Stylesheet v1.4.1 2010-03-01 Author: Richard Clark - http://richclarkdesign.com */ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}body{line-height:1;}article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block;}nav ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}a{border:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}ins{background-color:#ff9;color:#000;text-decoration:none;}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:700;}del{text-decoration:line-through;}abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help;}table{border-collapse:collapse;border-spacing:0;}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}input,select{vertical-align:middle;}
+
+
+html {
+font-size:100.1%;
+}
+
+body {
+color:#111;
+background:#fefefe;
+font-family:Georgia, "Bitstream Vera Serif", "Liberation Serif", serif;
+font-size:1em;
+line-height:1.5em;
+margin:3em 0;
+padding:0;
+}
+
+p,pre,h3,h4,blockquote,ul,ol,li,aside,img {
+margin-bottom:1.5em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+color:#666;
+font-weight:400;
+}
+
+h1 {
+font:normal 2.2em/1em 'Droid Serif',Georgia, "Bitstream Vera Serif", "Liberation Serif", serif;
+letter-spacing:-1px;
+color:#999;
+}
+
+h2 {
+font-size:1.5em;
+margin:0.4375em 0 1em;
+text-shadow: 0px 1px 0px #fff;
+font-family: 'Droid Serif', Georgia, "Bitstream Vera Serif", "Liberation Serif", serif;
+}
+
+a,a:link,a:visited {
+color:#004080;
+/*color:#45A5B5;*/
+/*color:#3D919F;*/
+text-decoration:underline;
+-moz-transition: color 0.25s ease-in-out;
+-webkit-transition: color 0.25s ease-in-out;
+}
+
+a:active {
+background:#eaeaea;
+}
+
+nav a,footer a,aside a,.link h2 a {
+text-decoration:none!important;
+}
+
+a:hover {
+color:#666;
+text-decoration:none;
+}
+
+ul {
+list-style-type:disc;
+color:#ddd;
+}
+
+ul li {
+color:#111;
+}
+
+ul ul {
+list-style-type:circle;
+margin-left:1em;
+}
+
+img {
+border:1px solid #eaeaea;
+}
+
+img[src*="_500"] {
+width:100%;
+max-width:500px;
+}
+
+img[src*="_400"] {
+width:100%;
+max-width:400px;
+}
+
+img[alt*="screenshot"] {
+width:100%;
+max-width:500px;
+}
+
+img.avatar {
+	max-width:16px;
+}
+
+/* replace with figure, caption tags */
+.caption {
+margin-top: -3em;
+font-style:italic;
+}
+
+figcaption {
+margin:-2em 0 1.5em 0;
+color:#aaa;
+font-size:0.8em;
+font-style:italic;
+}
+
+form {
+display:inline;
+margin:0;
+}
+
+input {
+margin:-0.25em 0 0 0;
+display:inline;
+border:1px solid #aaa;
+border-radius: 0.25em;
+-webkit-border-radius: 0.25em;
+-moz-border-radius: 0.25em;
+padding:1px;
+display:inline;
+background:transparent;
+}
+
+input:focus {
+outline:0;
+border:1px solid #000;
+}
+
+pre,code {
+font-size:0.875em;
+font-family: Monaco,"DejaVu Sans Mono", "Lucida Console", monospace;
+}
+
+small pre, small code {
+font-size:0.75em;
+}
+
+hr {
+margin:0 0 3em 0;
+border-top:1px solid #eaeaea;
+}
+
+article hr {
+margin:1.5em 0;
+}
+
+ins {
+background: #fcfcfc;
+}
+
+blockquote {
+color:#555;
+margin:0 1em;
+padding:0 1.5em 0 8px;
+border-left:1px solid #eaeaea;
+}
+
+article.quote blockquote {
+font-family: 'Droid Serif', Georgia, "Bitstream Vera Serif", "Liberation Serif", serif;
+font-size:1.5em;
+line-height:32px;
+border:none;
+padding:0;
+margin:0;
+}
+
+article.quote blockquote+p {
+text-align:right;
+margin:-1.5em 1.5em 1.5em 0;
+}
+
+article.quote blockquote+p:before {
+content:"\2013 \2009";
+}
+
+
+blockquote ol, blockquote ul {
+margin-left:1.5em;
+}
+
+small {
+font-size:0.875em;
+}
+
+abbr {
+text-transform:uppercase;
+font-variant:small-caps;
+}
+
+abbr[title] a {
+text-decoration:none;
+}
+
+div.content {
+width:60%;
+max-width:35em;
+min-width:26em;
+margin:1.5em auto;
+}
+
+header {
+color:#777;
+margin:0 0 1.5em 0;
+}
+
+header:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+header a {
+text-decoration:none!important;
+}
+
+header p {
+font-size:0.75em;
+line-height:1.5em;
+}
+
+header div.left {
+float:left;
+width:45%;
+padding-right:0.5em;
+margin-bottom:1.5em;
+}
+
+header h2 {
+font:italic 0.8em/1em Georgia, "Bitstream Vera Serif", "Liberation Serif", serif;
+color:#999;
+margin:0.75em 0;
+}
+
+/* Carbon Ads styling */
+
+
+#carbonads-container {
+float:right;
+width:50%;
+padding:0 0 0 1em;
+border:none!important;
+background:#fefefe;
+margin:4px 0 0 0;
+}
+
+#carbonads-container>div {
+font:normal 0.75em/1.4em Georgia,"Bitstream Vera Serif", "Liberation Serif", serif!important;
+background:#fefefe!important;
+background-image:none!important;
+border:none!important;
+}
+
+.carbonad-image {
+display:block;
+float:left;
+width:50%;
+padding:0!important;
+margin-top:0!important;
+}
+
+.carbonad-image img {
+margin:0!important;
+padding:0!important;
+}
+
+.carbonad-text {
+font-family: Georgia, "Bitstream Vera Serif", "Liberation Serif", serif;
+font-size:1em!important;
+width:45%!important;
+margin:0 0 0 0!important;
+padding:0 0 0 0!important;
+}
+
+.carbonad-text a {
+font-weight:normal!important;
+color:#004080!important;
+}
+
+.carbonad-tag {
+margin:0.5em 0 0 0!important;
+text-align:left!important;
+z-index:999 ;
+}
+
+.carbonad-tag:first-letter {
+text-transform:uppercase;
+}
+
+footer, nav {
+font-size:0.875em;
+}
+
+
+article {
+margin:0 0 3em 0;
+}
+
+article h4 {
+font-size:1em;
+font-style:italic;
+}
+
+article h4 + ul li {
+margin-bottom:0;
+}
+
+article footer p {
+margin-bottom:0;
+}
+
+aside#ads {
+margin-top:-1.5em;
+}
+
+aside h3 {
+display:none;
+}
+
+aside ol {
+font-size:0.875em;
+list-style-type:none;
+}
+
+aside ol li {
+margin:0 0 0.875em 0;
+}
+
+aside ol li img {
+vertical-align:middle;
+padding:0;
+margin:0;
+}
+
+aside ol li div {
+margin:0;
+}
+
+aside ol li.tumblelog_onethingwell { /* Hide own reblogs */
+display:none;
+}
+
+nav ul li {
+display:inline;
+margin:0 0.25em;
+}
+
+.more h2:before {
+font-size:1em;
+content:"\00B6 ";
+color:#aeaeae;
+margin-right:0.25em;
+vertical-align:top;
+}
+
+.link h2 {
+font-size:1.5em;
+}
+
+.link h2:after {
+color:#eaeaea;
+content:" \21d2";
+}
+
+.link:hover h2:after {
+color:#aeaeae;
+}
+
+/* I really like ampersands */
+.amp {
+font-family:Baskerville, Palatino, Constantina, "Palatino Linotype", "Book Antiqua", "URW Bookman L", "Bitstream Vera Serif", serif;
+font-style:italic;
+}
+
+/* Pretty printing styles. Used with prettify.js. */
+
+.str { color: #080; }
+.kwd { color: #008; }
+.com { color: #800; }
+.typ { color: #606; }
+.lit { color: #066; }
+.pun { color: #660; }
+.pln { color: #000; }
+.tag { color: #008; }
+.atn { color: #606; }
+.atv { color: #080; }
+.dec { color: #606; }
+pre.prettyprint { padding: 2px; }
+
+@media print {
+  .str { color: #060; }
+  .kwd { color: #006; font-weight: bold; }
+  .com { color: #600; font-style: italic; }
+  .typ { color: #404; font-weight: bold; }
+  .lit { color: #044; }
+  .pun { color: #440; }
+  .pln { color: #000; }
+  .tag { color: #006; font-weight: bold; }
+  .atn { color: #404; }
+  .atv { color: #060; }
+}
+
+/* Still in flux */
+
+body#search form + hr {
+margin-top:1.5em;
+} 
+
+/* Footnotes */
+sup {
+font-size:0.75em;
+height: 0;
+line-height: 1;
+vertical-align: baseline;
+vertical-align: bottom;
+position: relative;
+bottom: 1.5ex;
+}
+
+.footnotes {
+font-size:0.875em;
+width:100%;
+max-width:100%;
+min-width:100%;
+padding:0;
+margin:0;
+}
+
+sup a, a[href^="#r"] {
+text-decoration: none;
+}
+
+kbd {
+width:1em;
+padding:1px 2px;
+white-space:nowrap;
+color:#000;
+background:#efefef;
+border-width:1px 2px 2px 1px;
+border-style:solid;
+border-color:#ccc #aaa #888 #bbb;
+border-radius:0.1875em;
+-webkit-border-radius:0.1875em;
+-moz-border-radius:0.1875em;
+box-shadow: 2px 2px 2px #aaa;
+}
+
+kbd + kbd {
+margin-left:0.25em;
+}
+
+span.caps {
+text-transform:uppercase;
+font-variant:small-caps;
+}
+
+ul.chat li {
+list-style-type:none;
+padding-left:0.25em;
+margin-bottom:0.75em;
+border-radius:0.1875em;
+}
+
+ul.chat li.odd {
+background:#eaeaea;
+}
+
+ul.chat li span {
+font-style:italic;
+}
+
+p.question {
+font-weight:bold;
+}
+
+/* Page footer */
+
+.smallprint {
+font-size:1em;
+margin:0 auto;
+width:60%;
+max-width:35em;
+min-width:26em;
+margin:1.5em auto;
+color:#aaa;
+}
+
+.smallprint p {
+font-size:0.75em;
+}
+
+.smallprint a {
+color:#aaa!important;
+}
+
+
+
+
+/* Links page */
+
+.gf-author, .gf-spacer, .gf-relativePublishedDate, .gf-snippet {
+display:none!important;
+}
+
+/* Shop */
+
+#shop {
+	width:900px!important;
+	margin:0 auto;
+}
+
+iframe html {
+	width:100%!important;
+}
+
+
+ 
+/* iPad */
+
+@media only screen and (max-device-width: 1024px) {
+
+	h1 { font-size:1.5em; margin-top:0.1em; }
+	
+	header p a {
+		text-decoration:none!important; /* No idea why this needs to be declared again */
+	}
+	
+    .left {
+	padding:0;
+    }
+
+    #carbonads-container {
+    float:right;
+    width:50%;
+    }
+	
+	.carbonad-text {
+		margin:0;
+		padding:0;
+		min-width:120px;
+	}
+
+}
+
+/* iPhone and (?) other mobile devices */
+
+@media only screen and (max-device-width: 480px) {
+
+		header {
+		margin-top:-3em;
+		}
+		
+		.left {
+		min-width:400px;
+		}
+		
+		#carbonads-container {
+			min-width:95%; 
+			padding:0 0 1em 0;
+		}
+		
+		.carbonad-text {
+			font-size:1.2em!important;
+			display:block;
+			min-width:160px;
+			float:left;
+		}
+		
+		.carbonad-tag {
+			display:block;
+		}
+		
+		h1 {
+			font-size:3em;
+		}
+		
+		header h2 {
+			font-size:1.2em;
+		}
+		
+		header p {
+			font-size:0.6em!important;
+		}
+
+		div.content {
+			padding:5%;
+		}
+
+		article ul {
+			margin-left:1.5em;
+		}
+		
+		article footer {
+			font-size:60%;
+		}
+		
+		pre, code {
+			white-space:pre-wrap;
+		}
+
+}
+
+@media only screen and (max-device-width: 480px) and (orientation: portrait) {
+	
+	div.content {
+		max-width:90%;
+	}
+	
+}
+
+
+@media only screen and (max-device-width: 480px) and (orientation: landscape) {
+	
+	div.content {
+		max-width:90%;
+	}
+	
+	h1 {
+		font-size:1.2em;
+	}
+	
+	header h2 {
+		font-size:1em;
+	}
+	
+}
+
+
+/* Smaller type for thinner widths */
+
+@media (max-width: 600px) {
+	
+	div.content {
+		width: 95%;	
+	}
+	
+	header {
+		border:none;
+	}
+	
+	article {
+			font-size: 0.875em;
+			line-height:1.5em;
+	}
+	
+		
+	article ul {
+		margin-left:3em;
+	}
+	
+	pre, code {
+		white-space:pre-wrap;
+	}
+	
+	
+	.left {
+	min-width:400px;
+	border:none;
+	}
+	
+	#carbonads-container {
+	width:95%;
+	margin:0 auto;
+	font-size:1.1em;
+	}
+	
+	.carbonad-text {
+		min-width:140px!important;
+	}
+	
+	.carbonad-tag {
+		display:block!important;
+	}
+	
+	h1 {
+		font-size:3em;
+	}
+	
+	header h2 {
+		font-size:1.2em;
+	}
+	
+	header p {
+		font-size:1em;
+	}
+
+	
+}
+
+
+@media (max-width: 900px) {
+	h1 { font-size: 1.5em; }
+}
+
+
+
+@media (max-width: 800px) {
+	div.content {
+		font-size: 0.9375em;
+		line-height: 1.5em;
+		width: 90%;
+	}
+	
+	h1 {
+		margin-top:0.2em;
+	}
+	
+	.left {
+		max-width:40%;
+		padding-right:1em;
+	}
+	
+	.carbonad-text {
+		width:30%!important;
+	}
+	
+}
