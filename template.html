@@ -69,7 +69,8 @@
 <hr />
 {/block:SearchPage}
 {block:TagPage}
-<p>Posts tagged with <i>{Tag}</i>.</p>
+<h2>Posts tagged with <i>{Tag}</i>.</h2>
+<p>Subscribe to the <a href="http://onethingwell.org/tagged/{Tag}/rss"><i>{Tag}</i> tag  feed</a>.</p>
 <form action="/search" method="get"><label for="q">Search: <input type="text" name="q" id="q" value="{SearchQuery}"/></form></p>
 {/block:TagPage}
 {block:Posts}
